@@ -68,7 +68,7 @@ namespace WorkersDepartament
         /// <summary>
         /// Создание случайного сотрудника
         /// </summary>
-        public Worker()
+        Worker()
         {
             Random r = new Random();
             string[] names = { "Маша", "Катя", "Петя", "Вася" }; // 0-3

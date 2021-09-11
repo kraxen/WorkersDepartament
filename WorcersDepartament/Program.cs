@@ -10,8 +10,8 @@ namespace WorkersDepartament
             //d1.SortBySalary();
             //d1.SortByFirstName();
             //d1.SortByLastName();
-            d1.SortByAge();
-            d1.AddWorker(new Worker());
+            //d1.SortByAge();
+            d1.RemoveWorker(200);
             d1.RemoveWorker(15);
             Worker w1 = new Worker("Саша", "Кузнецов", 15, 15000);
             d1.AddWorker(w1);

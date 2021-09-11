@@ -101,8 +101,11 @@ namespace WorkersDepartament
         /// <param name="id">Идентификатор сотрудника</param>
         public void RemoveWorker(int id)
         {
-            this.workers.RemoveAt(id);
-            this.workersCount--;
+            if (id <= workers.Count)
+            {
+                this.workers.RemoveAt(id);
+                this.workersCount--;
+            }
         }
         /// <summary>
         /// Изменение сотрудника
@@ -111,13 +114,16 @@ namespace WorkersDepartament
         /// <param name="worker">Новое описание сотрудника</param>
         public void UpdateWorker(int id, Worker worker)
         {
-            worker.SetDepartament(id, this);
-            for(int i = 0; i < workers.Count; i++)
+            if (id <= workers.Count)
             {
-                if(workers[i].Id == id)
+                worker.SetDepartament(id, this);
+                for (int i = 0; i < workers.Count; i++)
                 {
-                    workers[i] = worker;
-                    break;
+                    if (workers[i].Id == id)
+                    {
+                        workers[i] = worker;
+                        break;
+                    }
                 }
             }
         }
